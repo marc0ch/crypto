@@ -12,6 +12,9 @@ import statsmodels.api as sm
 import warnings
 from itertools import product
 from datetime import datetime
+import os
+
+os.chdir("./data/")
 #from scipy import pearsonr
 warnings.filterwarnings('ignore')
 plt.style.use('seaborn-poster')
