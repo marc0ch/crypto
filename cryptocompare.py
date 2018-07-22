@@ -14,7 +14,7 @@ import pandas as pd
 
 class cryptocompare:
     
-    def price(symbol, comparison_symbols=['USD'], exchange=''):
+    def price(self, symbol, comparison_symbols=['USD'], exchange=''):
         url = 'https://min-api.cryptocompare.com/data/price?fsym={}&tsyms={}'\
                 .format(symbol.upper(), ','.join(comparison_symbols).upper())
         if exchange:
@@ -23,7 +23,7 @@ class cryptocompare:
         data = page.json()
         return data
     
-    def daily_price_historical(symbol, comparison_symbol, all_data=True, limit=1, aggregate=1, exchange=''):
+    def daily_price_historical(self, symbol, comparison_symbol, all_data=True, limit=1, aggregate=1, exchange=''):
         url = 'https://min-api.cryptocompare.com/data/histoday?fsym={}&tsym={}&limit={}&aggregate={}'\
                 .format(symbol.upper(), comparison_symbol.upper(), limit, aggregate)
         if exchange:
@@ -37,7 +37,7 @@ class cryptocompare:
         return df
     
     
-    def hourly_price_historical(symbol, comparison_symbol, limit, aggregate, exchange=''):
+    def hourly_price_historical(self, symbol, comparison_symbol, limit, aggregate, exchange=''):
         url = 'https://min-api.cryptocompare.com/data/histohour?fsym={}&tsym={}&limit={}&aggregate={}'\
                 .format(symbol.upper(), comparison_symbol.upper(), limit, aggregate)
         if exchange:
@@ -48,7 +48,7 @@ class cryptocompare:
         df['timestamp'] = [datetime.datetime.fromtimestamp(d) for d in df.time]
         return df
     
-    def minute_price_historical(symbol, comparison_symbol, limit, aggregate, exchange=''):
+    def minute_price_historical(self, symbol, comparison_symbol, limit, aggregate, exchange=''):
         url = 'https://min-api.cryptocompare.com/data/histominute?fsym={}&tsym={}&limit={}&aggregate={}'\
                 .format(symbol.upper(), comparison_symbol.upper(), limit, aggregate)
         if exchange:
@@ -59,7 +59,7 @@ class cryptocompare:
         df['timestamp'] = [datetime.datetime.fromtimestamp(d) for d in df.time]
         return df
     
-    def coin_list():
+    def coin_list(self):
         url = 'https://www.cryptocompare.com/api/data/coinlist/'
         page = requests.get(url)
         data = page.json()['Data']
