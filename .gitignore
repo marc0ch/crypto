@@ -1,2 +1,3 @@
-btc/data/*.csv
-btc/*.csv
+old/data/*.csv
+old/*.csv
+*.csv
