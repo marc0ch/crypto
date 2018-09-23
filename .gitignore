@@ -1,2 +1,2 @@
-./btc/data/*.csv
-./btc/*.csv
+btc/data/*.csv
+btc/*.csv
