@@ -17,8 +17,8 @@ import matplotlib.pyplot as plt
 import math
 
 from statsmodels.sandbox.regression.predstd import wls_prediction_std
-from pandas.core import datetools #used f
-from pandas import Series, DataFrame, Panel
+# from pandas.core import datetools #used f
+# from pandas import Series, DataFrame, Panel
 from scipy import stats
 from itertools import product
 from datetime import datetime
